@@ -9,21 +9,14 @@ import org.springframework.web.servlet.ModelAndView;
  * @date 2019/3/29
  */
 @Controller
-public class IndexController {
+public class LoginController {
 
-    @GetMapping("/index")
+    @GetMapping("/login")
     public ModelAndView index(){
         ModelAndView mv = new ModelAndView();
 
-            mv.setViewName("/index");
+            mv.setViewName("/login/login");
 
-        return mv;
-    }
-
-    @GetMapping("/403")
-    public ModelAndView unAuthorized(){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("/common/403");
         return mv;
     }
 }
