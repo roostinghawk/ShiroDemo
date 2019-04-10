@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="liuwei.demo.shiro.dao.UserDao" >
+  <resultMap id="UserMap" type="liuwei.demo.shiro.model.User" >
+    <constructor >
+      <idArg column="uid" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="loginName" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="password" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="salt" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="state" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
+  <resultMap id="RoleMap" type="liuwei.demo.shiro.model.Role" >
+    <constructor>
+      <idArg column="uid" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="roleId" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
+  <resultMap id="PermissionMap" type="liuwei.demo.shiro.model.Permission" >
+    <constructor>
+      <idArg column="id" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="name" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="parentId" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="permission" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="resourceType" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="url" jdbcType="CHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+
+  <sql id="User_Column_List" >
+    uid, loginName, name, password, salt, state
+  </sql>
+
+  <sql id="Role_Column_List" >
+    uid, roleId
+  </sql>
+
+  <sql id="Permission_Column_List" >
+    id, name, parent_id, permission, url, resource_type
+  </sql>
+
+
+  <select id="findUserByLoginName" resultMap="UserMap" parameterType="java.lang.String" >
+    select  <include refid="User_Column_List" />
+    from user where loginName=#{loginName }
+  </select>
+
+  <select id="findRoles" resultMap="RoleMap" parameterType="java.lang.String" >
+    select  <include refid="Role_Column_List" />
+    from role where uid=#{uid}
+  </select>
+
+  <select id="findPermissionIdByRoleId" resultMap="PermissionMap" parameterType="java.lang.String" >
+    select  <include refid="Permission_Column_List" />
+    from permission where rold_id=#{roleId}
+  </select>
+
+</mapper>

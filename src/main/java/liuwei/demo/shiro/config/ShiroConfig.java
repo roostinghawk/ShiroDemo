@@ -45,7 +45,6 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
 
-
 	/**
 	 * 全局
 	 */
