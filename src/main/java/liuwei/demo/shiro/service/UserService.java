@@ -31,4 +31,9 @@ public interface UserService {
        */
       List<Permission> findPermissionsByRoleId(int roleId);
 
+
+      void addUser(User user);
+
+      List<User> findUsers();
+
 }

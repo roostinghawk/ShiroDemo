@@ -35,4 +35,14 @@ public class UserServiceImpl implements UserService {
     public List<Permission> findPermissionsByRoleId(int roleId) {
         return userDao.findPermissionIdByRoleId(roleId);
     }
+
+    @Override
+    public void addUser(User user) {
+        userDao.insert(user);
+    }
+
+    @Override
+    public List<User> findUsers() {
+        return userDao.findUsers();
+    }
 }

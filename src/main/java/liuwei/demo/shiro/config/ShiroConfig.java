@@ -11,6 +11,7 @@
  */
 package liuwei.demo.shiro.config;
 
+import liuwei.demo.shiro.consts.Const;
 import liuwei.demo.shiro.realm.MyRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
@@ -71,7 +72,7 @@ public class ShiroConfig {
 		filterChainDefinitionMap.put("/logout", "logout");
         //<!-- 过滤链定义，从上向下顺序执行，一般将/**放在最为下边 -->
         //<!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
-        filterChainDefinitionMap.put("/**", "authc");
+        filterChainDefinitionMap.put("/**", "anon");
 
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		return shiroFilterFactoryBean;
@@ -109,9 +110,9 @@ public class ShiroConfig {
 	@Bean
 	public HashedCredentialsMatcher hashedCredentialsMatcher(){
 		HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-		hashedCredentialsMatcher.setHashAlgorithmName("md5");
+		hashedCredentialsMatcher.setHashAlgorithmName(Const.HASH_ALGORITHM);
 		//散列的次数，比如散列两次，相当于 md5( md5(""));
-		hashedCredentialsMatcher.setHashIterations(2);
+		hashedCredentialsMatcher.setHashIterations(Const.HASH_INTERATIONS);
 		return hashedCredentialsMatcher;
 	}
 

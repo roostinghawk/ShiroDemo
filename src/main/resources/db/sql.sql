@@ -57,8 +57,8 @@ INSERT INTO role_permission (`role_id`,`permission_id`) VALUES (1,5);
 INSERT INTO role_permission (`role_id`,`permission_id`) VALUES (2,1);
 INSERT INTO role_permission (`role_id`,`permission_id`) VALUES (2,5);
 
-INSERT INTO `user` (`uid`,`loginName`,`name`,`password`,`salt`,`state`) VALUES ('1', 'admin', '管理员', '4f251ab52c7b431254a7adc8ea31724b', 'saltadmin', 0);
-INSERT INTO `user`  (`uid`,`loginName`,`name`,`password`,`salt`,`state`) VALUES ('2', 'member', '会员', 'e1e34dfbc204ba288b6645caad95babe', 'saltvip', 0);
+INSERT INTO `user` (`uid`,`loginName`,`name`,`password`,`salt`,`state`) VALUES ('1', 'admin', '管理员', '274d19c08bd9506e8c9620db7b0e7a4f', '57ae27b03e03', 0);
+INSERT INTO `user`  (`uid`,`loginName`,`name`,`password`,`salt`,`state`) VALUES ('2', 'member', '会员', '7040c84ee28c58e00ac45a1075bdfb28', '6f41e3b340d4', 0);
 
 INSERT INTO user_role (`role_id`,`uid`) VALUES (1,1);
 INSERT INTO user_role (`role_id`,`uid`) VALUES (2,2);

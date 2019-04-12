@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Shiro示例</title>
+    <link href="#" th:href="@{/css/index.min.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/header::header"></div>
+
+<h1>添加用户</h1>
+
+<form action="/users" method="post" >
+    <input type="text" name = "loginName" placeholder="登录名" />
+    <input type="text" name = "name" placeholder="姓名" />
+    <input type="text" name = "password" placeholder="密码" />
+    <button type="submit" th:text="保存" />
+</form>
+
+<a href="/user/add"></a>
+
+
+
+
+<div th:replace="fragments/footer::footer">&nbsp;</div>
+<script type="text/javascript" th:src="@{/js/index.min.js}"></script>
+</body>
+</html>
