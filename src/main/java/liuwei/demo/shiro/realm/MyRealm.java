@@ -7,6 +7,7 @@ import liuwei.demo.shiro.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.codec.Hex;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
@@ -46,7 +47,7 @@ public class MyRealm extends AuthorizingRealm {
         return new SimpleAuthenticationInfo(
                 loginName,
                 user.getPassword(),
-                ByteSource.Util.bytes(user.getSalt()),
+                ByteSource.Util.bytes(Hex.decode(user.getSalt())),
                 getName());
     }
 
