@@ -15,10 +15,10 @@ public class IndexController {
 
     @GetMapping("/index")
     public ModelAndView index(){
-//        String userName = SecurityUtils.getSubject().getSession().getAttribute(Const.SESSION_KEY_USERNAME).toString();
+        String userName = SecurityUtils.getSubject().getSession().getAttribute(Const.SESSION_KEY_USERNAME).toString();
         ModelAndView mv = new ModelAndView();
         mv.setViewName("/index");
-//        mv.addObject("userName", userName);
+        mv.addObject("userName", userName);
         return mv;
     }
 

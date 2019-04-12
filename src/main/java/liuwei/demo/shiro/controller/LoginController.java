@@ -56,6 +56,6 @@ public class LoginController {
         User user = userService.findUserByLoginName(loginName);
         SecurityUtils.getSubject().getSession().setAttribute(Const.SESSION_KEY_USERNAME, user.getName());
 
-        return "index";
+        return "redirect:/index";
     }
 }

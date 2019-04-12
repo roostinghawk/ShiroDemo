@@ -4,6 +4,7 @@ import liuwei.demo.shiro.consts.Const;
 import liuwei.demo.shiro.model.User;
 import liuwei.demo.shiro.service.UserService;
 import liuwei.demo.shiro.util.PasswordUtil;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
+    @RequiresPermissions("view")
     public ModelAndView list(){
         List<User> users = userService.findUsers();
 
