@@ -66,6 +66,7 @@ public class MyRealm extends AuthorizingRealm {
         Set<String> roleSet = new HashSet<>();
         Set<String>  permissionSet = new HashSet<>();
         for(Role role : roles) {
+            roleSet.add(role.getRole());
             List<Permission> permissions = userService.findPermissionsByRoleId(role.getId());
             for(Permission permission : permissions) {
                 permissionSet.add(permission.getPermission());

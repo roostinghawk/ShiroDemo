@@ -29,7 +29,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
-    @RequiresPermissions("view")
+    @RequiresPermissions("user:view")
     public ModelAndView list(){
         List<User> users = userService.findUsers();
 
@@ -43,7 +43,9 @@ public class UserController {
      * 添加用户页面
      * @return
      */
+
     @GetMapping("/add")
+    @RequiresPermissions("user:add")
     public String addUser(){
         return "/user/add";
     }
@@ -54,6 +56,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(method = RequestMethod.POST)
+    @RequiresPermissions("user:add")
     public String create(@ModelAttribute User user){
 
         PasswordUtil.entryptPassword(user);

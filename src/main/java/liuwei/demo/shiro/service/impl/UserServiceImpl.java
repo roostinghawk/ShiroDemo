@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author liuwei
@@ -33,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Permission> findPermissionsByRoleId(int roleId) {
-        return userDao.findPermissionIdByRoleId(roleId);
+        return userDao.findPermissionsByRoleId(roleId);
     }
 
     @Override

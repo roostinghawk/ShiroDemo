@@ -26,7 +26,7 @@ create table role_permission(
 
 DROP TABLE IF EXISTS `user_role`;
 create table user_role(
- role_id int(4) not null  primary key,
+ role_id int(4) not null,
  uid int(4) not null
  );
 
