@@ -1,14 +1,3 @@
-/**
- * file name: ShiroConfig.java
- * description:
- * author: Chinda Wang
- * data: 2017/11/23 9:52
- * version: V1.0
- * copyright: Copyright © 2017 大连承远教育科技有限公司 版权所有
- * modify history 2017/11/23 9:52
- *  Chinda Wang
- *   代码格式化, 添加头注释, 类注释, 方法注释
- */
 package liuwei.demo.shiro.config;
 
 import liuwei.demo.shiro.consts.Const;
@@ -32,17 +21,6 @@ import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * shiro的控制类 下面方法的顺序不能乱 create on 2017/1/11 10:59
- */
-
-/**
- * <pre>
- * shiro的控制类 下面方法的顺序不能乱
- * 
- * <pre/>
- * author: Chinda Wang data: 2017/11/23 9:53
- */
 @Configuration
 public class ShiroConfig {
 
